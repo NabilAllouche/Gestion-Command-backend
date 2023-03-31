@@ -19,15 +19,19 @@ public class CommandeWs {
     public Commande findByReference(@PathVariable String reference) {
         return commandeService.findByReference(reference);
     }
+
+
     @DeleteMapping("/reference/{reference}")
     public int deleteByReference (@PathVariable String reference) {
         return commandeService.deleteByReference(reference);
     }
+
+
     @PostMapping("/")
     public Commande save(@RequestBody Commande commande) {
         return commandeService.save(commande);
     }
-    @GetMapping("/")
+    @GetMapping("/findAll/")
     public List<Commande> findAll() {
         return commandeService.findAll();
     }

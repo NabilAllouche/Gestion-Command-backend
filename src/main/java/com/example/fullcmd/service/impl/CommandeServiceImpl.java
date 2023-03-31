@@ -5,6 +5,7 @@ import com.example.fullcmd.dao.CommandeDao;
 import com.example.fullcmd.service.facade.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class CommandeServiceImpl implements CommandeService {
     }
 
     @Override
+    @Transactional
     public int deleteByReference(String reference) {
         return commandeDao.deleteByReference(reference);
     }
